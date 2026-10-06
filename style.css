@@ -1,0 +1,269 @@
+:root {
+  --bg: #eef4fb;
+  --card: #ffffff;
+  --text: #1d2737;
+  --muted: #5a6a80;
+  --accent: #2f7fd1;
+  --line: #d6e2f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e2638;
+    --card: #27324a;
+    --text: #e6eefa;
+    --muted: #a9b8cc;
+    --accent: #7fbaf5;
+    --line: #3a4866;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+header { margin-bottom: 24px; }
+header a { color: var(--muted); text-decoration: none; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 1.25rem; margin: 32px 0 8px; }
+
+a { color: var(--accent); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 16px 0;
+}
+
+.card h2 { margin-top: 0; }
+.muted { color: var(--muted); }
+
+ul { padding-left: 1.3em; }
+li { margin: 4px 0; }
+
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---- Home page: the game's own night-sky look, in both light and dark mode ---- */
+
+body.home {
+  --bg: #0b1226;
+  --card: #18233f;
+  --text: #e8f1ff;
+  --muted: #a8bad6;
+  --accent: #8cc8ff;
+  --line: #2a3a62;
+  --ice: #bfe6ff;
+  --green: #62c656;
+  background: radial-gradient(ellipse at top, #1c2a52 0%, var(--bg) 60%) fixed;
+  overflow-x: hidden;
+}
+
+.home main {
+  position: relative;
+  max-width: 1080px;
+}
+
+.home h1,
+.home h2,
+.home .topbar span,
+.home .tagline,
+.home .badge {
+  font-family: "Fredoka", system-ui, sans-serif;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.topbar img { border-radius: 10px; }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.home h1 {
+  font-size: clamp(2.8rem, 7vw, 4.6rem);
+  font-weight: 700;
+  color: #dff2ff;
+  margin: 4px 0 0;
+  text-shadow: 0 4px 0 #2f7fd1, 0 10px 24px rgba(47, 127, 209, 0.45);
+}
+
+.tagline {
+  font-size: 1.4rem;
+  color: var(--ice);
+  margin: 8px 0 16px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 0 #3c8d33;
+}
+
+figure { margin: 0; }
+
+.hero-shot img,
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 4px solid #2c4c86;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.hero-shot img { transform: rotate(1.5deg); }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 72px 0 56px;
+}
+
+.feature {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.feature img { display: block; margin-bottom: 8px; }
+.feature h2 { margin: 0 0 6px; font-size: 1.2rem; font-weight: 600; }
+.feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+.shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.shots figcaption {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 56px 0 24px;
+}
+
+.hats img {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 6px;
+  transition: transform 0.2s;
+}
+
+.hats img:nth-child(odd) { transform: rotate(-4deg); }
+.hats img:nth-child(even) { transform: rotate(4deg); }
+.hats img:hover { transform: rotate(0) scale(1.12); }
+
+.fair {
+  text-align: center;
+  color: var(--muted);
+}
+
+.home footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Falling snow: three layers of dots drifting at different speeds. */
+.snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(3px 3px at 20px 30px, #fff, transparent),
+    radial-gradient(2px 2px at 90px 120px, #fff, transparent),
+    radial-gradient(3px 3px at 160px 60px, #fff, transparent),
+    radial-gradient(2px 2px at 60px 180px, #fff, transparent),
+    radial-gradient(4px 4px at 130px 200px, #fff, transparent);
+  background-size: 200px 220px;
+  opacity: 0.35;
+  animation: snow 14s linear infinite;
+}
+
+.snow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+    radial-gradient(3px 3px at 150px 20px, #fff, transparent),
+    radial-gradient(2px 2px at 100px 160px, #fff, transparent);
+  background-size: 260px 280px;
+  animation: snow 22s linear infinite;
+}
+
+@keyframes snow {
+  from { background-position: 0 0; }
+  to { background-position: 40px 660px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snow, .snow::after { animation: none; }
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; }
+  .hero-shot img { transform: none; }
+  .features { grid-template-columns: 1fr 1fr; margin-top: 48px; }
+}
+
+@media (max-width: 560px) {
+  .features, .shots { grid-template-columns: 1fr; }
+  .hats img { width: 56px; height: 56px; }
+}
