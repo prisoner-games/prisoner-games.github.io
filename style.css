@@ -159,10 +159,14 @@ figure { margin: 0; }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 18px;
   margin: 72px 0 56px;
 }
+
+/* Five cards: three across, then two. */
+.feature { grid-column: span 2; }
+.feature:nth-child(n+4) { grid-column: span 3; }
 
 .feature {
   background: var(--card);
@@ -261,6 +265,8 @@ figure { margin: 0; }
   .hero { grid-template-columns: 1fr; gap: 28px; }
   .hero-shot img { transform: none; }
   .features { grid-template-columns: 1fr 1fr; margin-top: 48px; }
+  .feature, .feature:nth-child(n+4) { grid-column: auto; }
+  .feature:last-child { grid-column: 1 / -1; }
 }
 
 @media (max-width: 560px) {
