@@ -141,6 +141,12 @@ body.home {
   font-weight: 600;
   font-size: 1.1rem;
   box-shadow: 0 4px 0 #3c8d33;
+  text-decoration: none;
+}
+
+a.badge:hover,
+a.badge:focus-visible {
+  filter: brightness(1.08);
 }
 
 figure { margin: 0; }
